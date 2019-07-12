@@ -10,7 +10,8 @@ public class Program {
 		String[] lines = new String[] { "Good morning", "Good afternoon", "Good night" };
 		String path = "C:\\temp\\java.txt";
 		
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+		//com TRUE do lado do path ele não cria um novo arquivo, mas escreve dentro do existente
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
 			for (String line : lines) {
 				bw.write(line);
 				bw.newLine();
